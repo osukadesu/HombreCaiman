@@ -3,11 +3,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Misiones : MonoBehaviour
 {
+    public HumanInteractions humanInteractions;
+    public GameObject mage;
     public Text txtMision;
     public int mision;
+    public bool isMage;
     void Start()
     {
+        mage.SetActive(false);
         mision = 1;
+        isMage = false;
         LasMisiones(mision);
     }
     public void LasMisiones(int _mision)
@@ -15,11 +20,18 @@ public class Misiones : MonoBehaviour
         switch (_mision)
         {
             case 1:
-                txtMision.text = "Recoge la basura que la gente ha tirado, acercate y diles que no boten basura en el rio presionando la tecla F";
+                txtMision.text = "Recoge la basura que la gente ha tirado, acercate y diles que no boten basura en el rio";
                 StartCoroutine(IEHideText());
                 break;
             case 9:
                 StartCoroutine(IEMisionV2());
+                mage.SetActive(true);
+                break;
+            case 10:
+                isMage = true;
+                break;
+            case 11:
+                humanInteractions.humansAnim.SetBool("run", true);
                 break;
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
+    public Misiones misiones;
     public Animator characterAnim;
     [SerializeField] Rigidbody playerRB;
     [SerializeField] Vector3 moveDirection;
@@ -83,15 +84,17 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Swim"))
+        if (misiones.isMage && other.CompareTag("Swim"))
         {
+            misiones.mision++;
+            misiones.LasMisiones(misiones.mision);
             StartCoroutine(Transformation(true));
             StartCoroutine(IEMove());
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Swim"))
+        if (misiones.isMage && other.CompareTag("Swim"))
         {
             StartCoroutine(Transformation(false));
         }

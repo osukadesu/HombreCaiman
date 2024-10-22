@@ -1,27 +1,27 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-public class HumanInteractions : MonoBehaviour
+
+public class MageCharacter : MonoBehaviour
 {
-    public Animator humansAnim;
-    public Text txtMision2;
+    public Text txtMision4;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            txtMision2.text = "Presiona E para Hablar";
+            txtMision4.text = "Presiona E para Hablar";
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            txtMision2.text = "";
+            txtMision4.text = "";
         }
     }
     IEnumerator IEHideText()
     {
         yield return new WaitForSeconds(0.5f);
-        txtMision2.text = "";
+        txtMision4.text = "";
     }
 }

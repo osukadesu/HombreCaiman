@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-public class CanSpeak : MonoBehaviour
+
+public class CanSpeakMage : MonoBehaviour
 {
     public Misiones misiones;
     public Text txtMision2;
@@ -10,7 +11,7 @@ public class CanSpeak : MonoBehaviour
     {
         if (canSpeak && Input.GetKeyDown(KeyCode.E))
         {
-            txtMision2.text = "Deja de tirar basura al rio";
+            txtMision2.text = "Toma esta posión cuando entres al rio podrás asustar a la gente";
             StartCoroutine(IEHideText());
             misiones.mision++;
             misiones.LasMisiones(misiones.mision);
