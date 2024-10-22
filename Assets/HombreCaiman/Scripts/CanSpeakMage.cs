@@ -40,7 +40,7 @@ public class CanSpeakMage : MonoBehaviour
     }
     IEnumerator IEHideText()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
         txtMision2.text = "";
     }
 }
