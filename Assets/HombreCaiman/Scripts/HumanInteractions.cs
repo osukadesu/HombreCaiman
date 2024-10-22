@@ -11,7 +11,7 @@ public class HumanInteractions : MonoBehaviour
     {
         if (misiones.weAreRun)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, 0.5f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, target.position, 0.2f * Time.deltaTime);
             Vector3 direction = (target.position - transform.position).normalized;
         }
     }
