@@ -5,14 +5,16 @@ public class HumanInteractions : MonoBehaviour
 {
     public Misiones misiones;
     public Text txtMision2;
+    public bool canSpeak;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canSpeak && Input.GetKeyDown(KeyCode.E))
         {
             txtMision2.text = "Deja de tirar basura al rio";
             StartCoroutine(IEHideText());
             misiones.mision++;
             misiones.LasMisiones(misiones.mision);
+            canSpeak = false;
             /*
              StartCoroutine(IEHideTextAndDestroy());
             */
@@ -22,6 +24,7 @@ public class HumanInteractions : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            canSpeak = true;
             txtMision2.text = "Presiona E para Hablar";
         }
     }
@@ -29,6 +32,7 @@ public class HumanInteractions : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            canSpeak = false;
             txtMision2.text = "";
         }
     }
