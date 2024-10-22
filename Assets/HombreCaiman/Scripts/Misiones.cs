@@ -3,16 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Misiones : MonoBehaviour
 {
-    public HumanInteractions humanInteractions;
+    public HumanInteractions[] humanInteractions;
     public GameObject mage;
     public Text txtMision;
     public int mision;
-    public bool isMage;
+    public bool isMage, weAreRun;
     void Start()
     {
         mage.SetActive(false);
         mision = 1;
         isMage = false;
+        weAreRun = false;
         LasMisiones(mision);
     }
     public void LasMisiones(int _mision)
@@ -31,7 +32,12 @@ public class Misiones : MonoBehaviour
                 isMage = true;
                 break;
             case 11:
-                humanInteractions.humansAnim.SetBool("run", true);
+                weAreRun = true;
+                for (int i = 0; i < humanInteractions.Length; i++)
+                {
+                    humanInteractions[i].humansAnim.SetBool("walk", true);
+                    humanInteractions[i].humansAnim.SetBool("run", true);
+                }
                 break;
         }
     }
