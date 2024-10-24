@@ -7,11 +7,7 @@ public class PlayerChanger : MonoBehaviour
     public Misiones misiones;
     void Awake()
     {
-        if (misiones != null)
-        {
-            misiones = FindObjectOfType<Misiones>();
-        }
-        else Debug.Log("Mision is null");
+        misiones = FindObjectOfType<Misiones>();
         if (playerChanger == null)
         {
             playerChanger = this;

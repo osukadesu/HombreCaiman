@@ -15,7 +15,7 @@ public class MisionesSingleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        ChangeMision();
+        //ChangeMision();
     }
     void Start()
     {

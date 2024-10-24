@@ -12,6 +12,7 @@ public class CanSpeakMage : MonoBehaviour
         {
             txtMision2.text = "Busca la posión que está cerca del rio y cuando entres al rio podrás asustar a la gente";
             StartCoroutine(IEHideText());
+            MisionesSingleton.misionesSingleton.ChangeMision();
             StartCoroutine(IEHideTextAndDestroy());
         }
     }

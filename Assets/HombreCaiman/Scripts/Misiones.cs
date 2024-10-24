@@ -4,13 +4,14 @@ using UnityEngine.UI;
 public class Misiones : MonoBehaviour
 {
     public HumanInteractions[] humanInteractions;
-    public GameObject mage;
+    public GameObject mage, mision10;
     public Text txtMision;
     public bool isMage, weAreRun;
     public Transform playerPos2;
     public PlayerController player;
     void Start()
     {
+        mision10.SetActive(false);
         mage.SetActive(false);
         isMage = false;
         weAreRun = false;
@@ -30,6 +31,8 @@ public class Misiones : MonoBehaviour
             case 10:
                 isMage = true;
                 player.transform.position = playerPos2.position;
+                FindObjectOfType<Misiones>();
+                mision10.SetActive(true);
                 break;
             case 11:
                 weAreRun = true;
