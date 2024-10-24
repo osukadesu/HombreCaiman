@@ -849,11 +849,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humanInteractions:
-  - {fileID: 135629073}
-  - {fileID: 305287201}
-  - {fileID: 836656780}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mage: {fileID: 630830013}
-  takePosion: {fileID: 0}
   txtMision: {fileID: 805643987}
   isMage: 0
   weAreRun: 0
@@ -2286,13 +2285,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 135629070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9303f0e88927f2b49b1cb48ac99705e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9da2c449cf8bcd44ab76edbfbd35b138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   humansAnim: {fileID: 3469287837339609546}
   txtMision2: {fileID: 2116331336}
   target: {fileID: 1574424109}
-  misiones: {fileID: 47613334}
 --- !u!1 &157326715
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,13 +4069,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 305287198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9303f0e88927f2b49b1cb48ac99705e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9da2c449cf8bcd44ab76edbfbd35b138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   humansAnim: {fileID: 853662739}
   txtMision2: {fileID: 2116331336}
   target: {fileID: 1574424109}
-  misiones: {fileID: 47613334}
 --- !u!1001 &306946002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8238,7 +8235,6 @@ GameObject:
   m_Component:
   - component: {fileID: 645170919}
   - component: {fileID: 645170920}
-  - component: {fileID: 645170924}
   - component: {fileID: 645170922}
   - component: {fileID: 645170923}
   m_Layer: 0
@@ -8348,20 +8344,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &645170924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645170918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc1a53f0b688a7499ccf90e43d9ec8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pc: {fileID: 645170922}
-  misiones: {fileID: 47613334}
 --- !u!1001 &647639370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10651,13 +10633,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 836656777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9303f0e88927f2b49b1cb48ac99705e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9da2c449cf8bcd44ab76edbfbd35b138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   humansAnim: {fileID: 1959709268}
   txtMision2: {fileID: 2116331336}
   target: {fileID: 1574424109}
-  misiones: {fileID: 47613334}
 --- !u!1001 &848664748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18590,7 +18571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e1b5d09ad5dd44a94e753a57823fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerChanger: {fileID: 645170924}
+  playerChanger: {fileID: 0}
 --- !u!1001 &1369086056
 PrefabInstance:
   m_ObjectHideFlags: 0

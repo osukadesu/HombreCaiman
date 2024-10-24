@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool canJump, isWalk, canRun, isRun, isCaiman = false, canSwim, canMove;
     void Start()
     {
-        playerSpeed = 1f;
+        playerSpeed = 2.5f;
         canMove = true;
         canJump = true;
         canRun = true;
@@ -78,6 +78,6 @@ public class PlayerController : MonoBehaviour
         isRun = isWalk && canRun && Input.GetKey(KeyCode.LeftShift);
         characterAnim.SetBool("walk", isWalk);
         characterAnim.SetBool("run", isRun);
-        playerSpeed = isRun ? 4f : 1f;
+        playerSpeed = isRun ? 4f : 2.5f;
     }
 }

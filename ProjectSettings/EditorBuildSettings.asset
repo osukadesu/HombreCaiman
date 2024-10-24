@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hechicero.unity
     guid: f9c7a49a48117e746891ca9f737e1db8
+  - enabled: 1
+    path: Assets/Scenes/FearScene.unity
+    guid: 4da6c3cf428165441bc4872934fa3109
   m_configObjects: {}

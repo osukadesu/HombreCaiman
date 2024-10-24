@@ -2,34 +2,33 @@ using System.Collections;
 using UnityEngine;
 public class PlayerChanger : MonoBehaviour
 {
-    public static PlayerChanger playerChanger;
     public PlayerController pc;
-    public Misiones misiones;
-    void Awake()
+    public HumanInteractions[] humanInteractions;
+    public bool isMage, weAreRun;
+    public Transform playerPos2;
+    public PlayerController player;
+    void Start()
     {
-        misiones = FindObjectOfType<Misiones>();
-        if (playerChanger == null)
-        {
-            playerChanger = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        isMage = true;
+        player.transform.position = playerPos2.position;
     }
     void OnTriggerEnter(Collider other)
     {
-        if (misiones.isMage && other.CompareTag("Swim"))
+        if (isMage && other.CompareTag("Swim"))
         {
-            MisionesSingleton.misionesSingleton.mision++;
             StartCoroutine(Transformation(true));
             StartCoroutine(IEMove());
+            weAreRun = true;
+            for (int i = 0; i < humanInteractions.Length; i++)
+            {
+                humanInteractions[i].humansAnim.SetBool("walk", true);
+                humanInteractions[i].humansAnim.SetBool("run", true);
+            }
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (misiones.isMage && other.CompareTag("Swim"))
+        if (isMage && other.CompareTag("Swim"))
         {
             StartCoroutine(Transformation(false));
         }
