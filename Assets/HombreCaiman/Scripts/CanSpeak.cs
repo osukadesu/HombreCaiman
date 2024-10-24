@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CanSpeak : MonoBehaviour
 {
-    public Misiones misiones;
     public Text txtMision2;
     public bool canSpeak;
     void Update()
@@ -12,8 +11,7 @@ public class CanSpeak : MonoBehaviour
         {
             txtMision2.text = "Deja de tirar basura al rio";
             StartCoroutine(IEHideText());
-            misiones.mision++;
-            misiones.LasMisiones(misiones.mision);
+            MisionesSingleton.misionesSingleton.ChangeMision();
             StartCoroutine(IEHideTextAndDestroy());
         }
     }

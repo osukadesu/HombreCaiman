@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CleanTrash : MonoBehaviour
 {
-    public Misiones misiones;
     public Text txtMision2;
     public bool item;
     void Awake()
@@ -15,8 +14,7 @@ public class CleanTrash : MonoBehaviour
         if (item && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(IEHideTextAndDestroy());
-            misiones.mision++;
-            misiones.LasMisiones(misiones.mision);
+            MisionesSingleton.misionesSingleton.ChangeMision();
         }
     }
     void OnTriggerEnter(Collider other)

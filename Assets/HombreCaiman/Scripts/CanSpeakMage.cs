@@ -4,17 +4,14 @@ using UnityEngine.UI;
 
 public class CanSpeakMage : MonoBehaviour
 {
-    public Misiones misiones;
     public Text txtMision2;
     public bool canSpeak;
     void Update()
     {
         if (canSpeak && Input.GetKeyDown(KeyCode.E))
         {
-            txtMision2.text = "Toma esta posión cuando entres al rio podrás asustar a la gente";
+            txtMision2.text = "Busca la posión que está cerca del rio y cuando entres al rio podrás asustar a la gente";
             StartCoroutine(IEHideText());
-            misiones.mision++;
-            misiones.LasMisiones(misiones.mision);
             StartCoroutine(IEHideTextAndDestroy());
         }
     }

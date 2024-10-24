@@ -6,15 +6,14 @@ public class Misiones : MonoBehaviour
     public HumanInteractions[] humanInteractions;
     public GameObject mage;
     public Text txtMision;
-    public int mision;
     public bool isMage, weAreRun;
+    public Transform playerPos2;
+    public PlayerController player;
     void Start()
     {
         mage.SetActive(false);
-        mision = 1;
         isMage = false;
         weAreRun = false;
-        LasMisiones(mision);
     }
     public void LasMisiones(int _mision)
     {
@@ -30,6 +29,7 @@ public class Misiones : MonoBehaviour
                 break;
             case 10:
                 isMage = true;
+                player.transform.position = playerPos2.position;
                 break;
             case 11:
                 weAreRun = true;
@@ -49,7 +49,7 @@ public class Misiones : MonoBehaviour
     IEnumerator IEMisionV2()
     {
         yield return new WaitForSeconds(1f);
-        txtMision.text = "Busca al hechizero para que te de una posión y puedas asustar a la gente.";
+        txtMision.text = "Encuentra la cabaña del hechizero y pídele ayuda para asustar a la gente.";
         StartCoroutine(IEHideText());
     }
 }
